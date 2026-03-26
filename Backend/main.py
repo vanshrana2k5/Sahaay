@@ -134,11 +134,12 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:5174",
-        "https://sahaay-admin.vercel.app",
-        "https://sahaay-citizen.vercel.app",
+        "https://sahaay-aoywoli9i-vanshrana2k5s-projects.vercel.app",
+        "https://*.vercel.app",
     ],
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_credentials=True,
 )
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
