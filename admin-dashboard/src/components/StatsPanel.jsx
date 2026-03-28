@@ -1,4 +1,4 @@
-export default function StatsPanel({ stats }) {
+  export default function StatsPanel({ stats }) {
   const cards = [
     {
       label: "Active SOS",

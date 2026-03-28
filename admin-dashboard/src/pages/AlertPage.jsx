@@ -39,12 +39,12 @@ export default function AlertPage() {
   setSending(true);
   try {
     // 1. Save alert to DB (app notification)
-    await axios.post("http://localhost:8000/alerts", form);
+    await axios.post("${import.meta.env.VITE_API_URL || "http://localhost:8000"}/alerts", form);
 
     const alertMessage = `🚨 SAHAAY ALERT — ${form.zone}\nType: ${form.type} | Severity: ${form.severity}\n${form.message}\nHelpline: 1078`;
 
     // 2. Get contacts for the selected zone
-    const contactsRes = await axios.get("http://localhost:8000/contacts");
+    const contactsRes = await axios.get("${import.meta.env.VITE_API_URL || "http://localhost:8000"}/contacts");
     const zoneContacts = contactsRes.data.contacts.filter(
       (c) => c.zone === form.zone
     );
@@ -58,7 +58,7 @@ export default function AlertPage() {
 
     // 3. Send via selected channels
     if (form.channels.includes("SMS")) {
-      await axios.post("http://localhost:8000/contacts/sms", {
+      await axios.post("${import.meta.env.VITE_API_URL || "http://localhost:8000"}/contacts/sms", {
         numbers,
         message: alertMessage,
       });
@@ -66,7 +66,7 @@ export default function AlertPage() {
     }
 
     if (form.channels.includes("IVR Call")) {
-      await axios.post("http://localhost:8000/contacts/ivr", {
+      await axios.post("${import.meta.env.VITE_API_URL || "http://localhost:8000"}/contacts/ivr", {
         numbers,
         message: `${form.zone} emergency alert. ${form.message}. Call 1078 for help.`,
       });
@@ -74,7 +74,7 @@ export default function AlertPage() {
     }
 
     if (form.channels.includes("WhatsApp")) {
-      await axios.post("http://localhost:8000/contacts/sms", {
+      await axios.post("${import.meta.env.VITE_API_URL || "http://localhost:8000"}/contacts/sms", {
         numbers: numbers.map((n) => `whatsapp:${n}`),
         message: alertMessage,
       });

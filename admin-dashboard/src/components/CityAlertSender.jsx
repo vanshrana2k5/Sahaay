@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const BASE = "http://localhost:8000";
+const BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 const CITIES = ["Ludhiana", "Chandigarh", "Amritsar", "Jalandhar", "Patiala"];
 const DISASTER_TYPES = ["Flood", "Earthquake", "Heatwave", "Air Quality", "General"];
 

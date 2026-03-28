@@ -417,9 +417,9 @@ function SOSCard({ s, onResolve, isNew }) {
         <div className="flex gap-2 flex-wrap mb-3">
           {s.media.map((url, i) =>
             /\.(mp4|mov|webm)$/i.test(url)
-              ? <video key={i} src={`http://localhost:8000${url}`} controls className="w-40 h-28 rounded-lg object-cover" />
-              : <img key={i} src={`http://localhost:8000${url}`} alt=""
-                  onClick={() => window.open(`http://localhost:8000${url}`)}
+              ? <video key={i} src={`${import.meta.env.VITE_API_URL || "http://localhost:8000"}${url}`} controls className="w-40 h-28 rounded-lg object-cover" />
+              : <img key={i} src={`${import.meta.env.VITE_API_URL || "http://localhost:8000"}${url}`} alt=""
+                  onClick={() => window.open(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}${url}`)}
                   className="w-40 h-28 rounded-lg object-cover cursor-pointer" />
           )}
         </div>
