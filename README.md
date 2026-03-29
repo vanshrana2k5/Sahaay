@@ -19,9 +19,17 @@
 
 ## 📸 Screenshots
 
-| Dashboard | Live Map | Monitor |
-|-----------|----------|---------|
-| India Surveillance Radar with real-time disaster zones | Leaflet map with rescue team tracking | City-wise risk monitoring |
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### Live Map
+![Live Map](./screenshots/livemap.png)
+
+### Send Alert
+![Send Alert](./screenshots/sendalert.png)
+
+### SOS Feed
+![SOS Feed](./screenshots/sosfeed.png)
 
 ---
 
