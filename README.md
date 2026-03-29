@@ -164,7 +164,17 @@ CREATE DATABASE sahaay_db;
 | 📖 API Docs | https://sahaay-production.up.railway.app/docs |
 
 ---
+## 🔐 Demo Access
 
+> Try the live admin dashboard using the credentials below.
+
+| Field | Value |
+|-------|-------|
+| 🌐 **Dashboard URL** | https://sahaay-jet.vercel.app |
+| 👤 **Username** | admin |
+| 🔑 **Password** | sahaay123 |
+
+---
 ## 📁 Project Structure
 
 ```
